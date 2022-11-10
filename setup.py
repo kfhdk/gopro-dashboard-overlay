@@ -55,6 +55,7 @@ setup(
         "bin/gopro-extract.py",
         "bin/gopro-join.py",
         "bin/gopro-rename.py",
+        "bin/gopro-rotate.py",
         "bin/gopro-to-csv.py",
         "bin/gopro-to-gpx.py",
     ],

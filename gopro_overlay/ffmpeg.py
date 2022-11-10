@@ -88,6 +88,28 @@ def cut_file(input, output, start, duration):
     run(args)
 
 
+def rotate_file(input, output, rotation):
+    streams = find_streams(input)
+
+    maps = list(itertools.chain.from_iterable(
+        [["-map", f"0:{it.stream}"] for it in [streams.video, streams.audio, streams.meta] if it is not None]))
+
+    args = ["ffmpeg",
+            "-hide_banner",
+            "-y",
+            "-i", input,
+            "-map_metadata", "0",
+            *maps,
+            "-copy_unknown",
+            "-c", "copy",
+            "-metadata:s:v:0", f"rotate={str(rotation)}",
+            output]
+
+    print(args)
+
+    run(args)
+
+
 def join_files(filepaths, output):
     """only for joining parts of same trip"""
 

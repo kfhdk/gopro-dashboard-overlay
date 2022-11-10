@@ -106,5 +106,6 @@ help:
 	PYTHONPATH=. $(BIN)/python bin/gopro-extract.py --help
 	PYTHONPATH=. $(BIN)/python bin/gopro-join.py --help
 	PYTHONPATH=. $(BIN)/python bin/gopro-rename.py --help
+	PYTHONPATH=. $(BIN)/python bin/gopro-rotate.py --help
 	PYTHONPATH=. $(BIN)/python bin/gopro-to-csv.py --help
 	PYTHONPATH=. $(BIN)/python bin/gopro-to-gpx.py --help
